@@ -6,7 +6,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// run when editing: npx babel --watch src --out-dir public --presets react-app/prod
+// run when editing: npx babel --watch src --out-dir . --presets react-app/prod 
 
 var defaultState = { break: 300, work: 1500, timer: 1500, status: "Work", running: false };
 
