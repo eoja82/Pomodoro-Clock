@@ -47,9 +47,11 @@ class Presentational extends React.Component {
   clockify() {
     const minutes = Math.floor(this.state.timer / 60);
     const seconds = this.state.timer % 60;
-    if (seconds < 10 && minutes < 10) {
+    if (minutes < 10 && seconds >= 10) {
+      return "0" + minutes + ":" + seconds;
+    } else if (minutes < 10 && seconds < 10) {
       return "0" + minutes + ":" + "0" + seconds;
-    } else if (seconds < 10) {
+    } else  if (minutes >= 10 && seconds < 10) {
       return minutes + ":" + "0" + seconds;
     } else {
       return minutes + ":" + seconds;
