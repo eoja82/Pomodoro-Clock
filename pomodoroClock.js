@@ -72,7 +72,7 @@ var Presentational = function (_React$Component) {
         } else {
           this.setState({ work: this.state.work + 60 });
         }
-      } //could remove setting timer here so it does not increment the countdown, same for decrement
+      }
     }
   }, {
     key: "sessionDown",
@@ -216,9 +216,7 @@ var Presentational = function (_React$Component) {
             React.createElement(
               "button",
               { id: "start_stop", onClick: this.playPause, className: "btn btn-primary" },
-              React.createElement("i", { className: "fa fa-play" }),
-              " / ",
-              React.createElement("i", { className: "fa fa-pause" })
+              React.createElement("i", { className: this.state.running ? "fa fa-pause" : "fa fa-play" })
             ),
             React.createElement(
               "button",

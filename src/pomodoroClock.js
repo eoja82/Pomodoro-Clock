@@ -49,7 +49,7 @@ class Presentational extends React.Component {
       } else {
         this.setState({ work: this.state.work + 60 });
       }
-    } //could remove setting timer here so it does not increment the countdown, same for decrement
+    }
   }
   sessionDown() {
     if (this.state.work > 60) {
@@ -124,7 +124,7 @@ class Presentational extends React.Component {
             <button id="session-increment" onClick={this.sessionUp} className="btn btn-primary"><i className="fa fa-arrow-up"></i></button>
           </div>
           <div className="control-row">
-            <button id="start_stop" onClick={this.playPause} className="btn btn-primary"><i className="fa fa-play"></i> / <i className="fa fa-pause"></i></button>
+            <button id="start_stop" onClick={this.playPause} className="btn btn-primary"><i className={this.state.running ? "fa fa-pause" : "fa fa-play"}></i></button>
             <button id="reset" onClick={this.reset} className="btn btn-primary">Reset</button>
           </div>
         </div>
