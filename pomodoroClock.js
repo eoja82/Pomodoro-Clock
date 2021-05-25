@@ -235,7 +235,7 @@ var Presentational = function (_React$Component) {
           { id: "audio" },
           React.createElement("audio", { id: "beep", ref: function ref(_ref) {
               return _this2.audio = _ref;
-            }, src: "https://sampleswap.org/samples-ghost/SOUND%20EFFECTS%20and%20NOISES/Alarm%20Sounds/563[kb]atari-alarm-climber.aif.mp3", className: "clip" })
+            }, src: "https://sampleswap.org/samples-ghost/SOUND%20EFFECTS%20and%20NOISES/Electro%20and%20Synthetic/192[kb]clock_radio_alarm.wav.mp3", className: "clip" })
         )
       );
     }

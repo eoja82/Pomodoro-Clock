@@ -119,7 +119,7 @@ class Presentational extends React.Component {
           </div>
         </div>
         <div id="audio">
-          <audio id="beep" ref={ref => this.audio = ref} src="https://sampleswap.org/samples-ghost/SOUND%20EFFECTS%20and%20NOISES/Alarm%20Sounds/563[kb]atari-alarm-climber.aif.mp3" className="clip"></audio>
+          <audio id="beep" ref={ref => this.audio = ref} src="https://sampleswap.org/samples-ghost/SOUND%20EFFECTS%20and%20NOISES/Electro%20and%20Synthetic/192[kb]clock_radio_alarm.wav.mp3" className="clip"></audio>
         </div>
       </div>
     )
