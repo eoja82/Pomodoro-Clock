@@ -8,7 +8,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 // run when editing: npx babel --watch src --out-dir . --presets react-app/prod 
 
-var defaultState = { break: 300, work: 1500, timer: 1500, status: "Work", running: false };
+var defaultState = { break: 300, work: 1500, timer: 5, status: "Work", running: false };
 
 var Presentational = function (_React$Component) {
   _inherits(Presentational, _React$Component);
@@ -45,28 +45,44 @@ var Presentational = function (_React$Component) {
     key: "breakUp",
     value: function breakUp() {
       if (this.state.break < 3600) {
-        this.setState({ break: this.state.break + 60 });
+        if (this.state.status === "Break") {
+          this.setState({ break: this.state.break + 60, timer: this.state.break + 60 });
+        } else {
+          this.setState({ break: this.state.break + 60 });
+        }
       }
     }
   }, {
     key: "breakDown",
     value: function breakDown() {
       if (this.state.break > 60) {
-        this.setState({ break: this.state.break - 60 });
+        if (this.state.status === "Break") {
+          this.setState({ break: this.state.break - 60, timer: this.state.break - 60 });
+        } else {
+          this.setState({ break: this.state.break - 60 });
+        }
       }
     }
   }, {
     key: "sessionUp",
     value: function sessionUp() {
       if (this.state.work < 3600) {
-        this.setState({ work: this.state.work + 60, timer: this.state.work + 60 });
+        if (this.state.status === "Work") {
+          this.setState({ work: this.state.work + 60, timer: this.state.work + 60 });
+        } else {
+          this.setState({ work: this.state.work + 60 });
+        }
       } //could remove setting timer here so it does not increment the countdown, same for decrement
     }
   }, {
     key: "sessionDown",
     value: function sessionDown() {
       if (this.state.work > 60) {
-        this.setState({ work: this.state.work - 60, timer: this.state.work - 60 });
+        if (this.state.status === "Work") {
+          this.setState({ work: this.state.work - 60, timer: this.state.work - 60 });
+        } else {
+          this.setState({ work: this.state.work - 60 });
+        }
       }
     }
   }, {

@@ -1,6 +1,6 @@
 // run when editing: npx babel --watch src --out-dir . --presets react-app/prod 
 
-const defaultState = { break: 300, work: 1500, timer: 1500, status: "Work", running: false };
+const defaultState = { break: 300, work: 1500, timer: 5, status: "Work", running: false };
 
 class Presentational extends React.Component {
   constructor(props) {
@@ -26,22 +26,38 @@ class Presentational extends React.Component {
   }
   breakUp() {
     if (this.state.break < 3600) {
-      this.setState({ break: this.state.break + 60 });
+      if (this.state.status === "Break") {
+        this.setState({ break: this.state.break + 60, timer: this.state.break + 60 });
+      } else {
+        this.setState({ break: this.state.break + 60 });
+      }
     }
   }
   breakDown() {
     if (this.state.break > 60) {
-      this.setState({ break: this.state.break - 60 });
+      if (this.state.status === "Break") {
+        this.setState({ break: this.state.break - 60, timer: this.state.break - 60 });
+      } else {
+        this.setState({ break: this.state.break - 60 });
+      }
     }
   }
   sessionUp() {
     if (this.state.work < 3600) {
-      this.setState({ work: this.state.work + 60, timer: this.state.work + 60 });
+      if (this.state.status === "Work") {
+        this.setState({ work: this.state.work + 60, timer: this.state.work + 60 });
+      } else {
+        this.setState({ work: this.state.work + 60 });
+      }
     } //could remove setting timer here so it does not increment the countdown, same for decrement
   }
   sessionDown() {
     if (this.state.work > 60) {
-      this.setState({ work: this.state.work - 60, timer: this.state.work - 60 });
+      if (this.state.status === "Work") {
+        this.setState({ work: this.state.work - 60, timer: this.state.work - 60 });
+      } else {
+        this.setState({ work: this.state.work - 60 });
+      }
     }
   }
   clockify() {
