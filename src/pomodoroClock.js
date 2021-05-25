@@ -1,6 +1,6 @@
 // run when editing: npx babel --watch src --out-dir . --presets react-app/prod 
 
-const defaultState = { break: 300, work: 1500, timer: 5, status: "Work", running: false };
+const defaultState = { break: 300, work: 1500, timer: 1500, status: "Work", running: false };
 
 class Presentational extends React.Component {
   constructor(props) {

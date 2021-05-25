@@ -8,7 +8,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 // run when editing: npx babel --watch src --out-dir . --presets react-app/prod 
 
-var defaultState = { break: 300, work: 1500, timer: 5, status: "Work", running: false };
+var defaultState = { break: 300, work: 1500, timer: 1500, status: "Work", running: false };
 
 var Presentational = function (_React$Component) {
   _inherits(Presentational, _React$Component);
